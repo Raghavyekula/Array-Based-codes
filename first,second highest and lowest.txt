@@ -1,0 +1,29 @@
+//This program For finding first and second large number,Least number in the Array//
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {88,65,5,9,77,55,0};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int max1=0,max2=0,low=0,i=0;
+  low=arr[i];
+    // Count the frequency of each element
+  for( i=0;i<size;i++)
+  {
+    
+      if(arr[i]>=max1)
+      max1=arr[i];
+      else if((arr[i]>=max2)&&(arr[i]<max1))
+      max2=arr[i];
+      if(low>=arr[i])
+      low=arr[i];
+      
+  }
+
+    printf("%d\n",max1);
+    printf("%d\n",max2);
+    printf("%d\n",low);
+    
+    return 0;
+}
+

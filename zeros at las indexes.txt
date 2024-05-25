@@ -1,0 +1,26 @@
+/*This program for putting Zeros at last indexes
+if we input like 1,4,5,0,0,4,0,6 then it will give output 1,4,5,4,6,0,0,0*/
+#include <stdio.h>
+
+int main() {
+    int arr[] = {0, 0, 1, 2, 0, 3, 4};
+    int var = 0;
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int j, K;
+    
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == var) {
+            for (j = i; j < size - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[j] = var;
+            i--; // This line is not needed anymore
+            size--; // Adjust size after each swap
+        }
+    }
+    
+    for (K = 0; K < sizeof(arr) / sizeof(arr[0]); K++) {
+        printf("%d ", arr[K]);
+    }
+    return 0;
+}

@@ -1,0 +1,30 @@
+/*This program gives the output repeated elements in the array
+if we give output 2,2,3,3,4,5,6,6 then it will output as 2,2,3,3*/
+
+
+#include <stdio.h>
+
+void printRepeated(int arr[], int size) {
+    int i, j,count=0;
+    printf("Repeated elements in the array: ");
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+            }
+            if(count>1)
+            {
+               printf("%d ",arr[i]);
+               count=0;
+            }
+        }
+    }
+    //printf("\n");
+}
+
+int main() {
+    int arr[] = {1, 2, 2, 3, 3,1};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printRepeated(arr, size);
+    return 0;
+}

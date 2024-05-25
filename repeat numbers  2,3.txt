@@ -1,0 +1,46 @@
+/*This program gives the output repeated elements in the array
+if we give output 2,2,3,3,4,5,6,6 then it will output as 2,3*/
+
+
+#include <stdio.h>
+void repeated(int *,int );
+int before(int *,int);
+int main()
+{
+    int arr[]={2,2,2,3,5,5,5,9,8};
+    int size=sizeof(arr)/sizeof (arr[1]);
+    repeated(arr,size);
+}
+
+ void repeated(int arr[],int size)
+{
+    int i,j;
+    for(i=0;i<size-1;i++)
+    {
+        for(j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                if(before(arr,i))
+                printf("%d ",arr[i]);
+                break;
+            }
+        }
+    }
+}
+
+
+int before(int *arr,int i)
+{
+    int j=0;
+    for(j=0;j<i;j++)
+    {
+        if(arr[j]==arr[i])
+        return 0;
+    }
+    return 1;
+}
+
+
+
+
